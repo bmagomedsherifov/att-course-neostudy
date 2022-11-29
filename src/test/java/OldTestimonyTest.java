@@ -1,5 +1,3 @@
-package ru.neoflex.vtb.autotests;
-
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
@@ -7,10 +5,8 @@ import ru.neoflex.controllers.RequestTestController;
 import ru.neoflex.dao.MySqlConnector;
 import ru.neoflex.model.ResponseOldTestimony;
 
-import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.DecimalFormat;
 
 public class OldTestimonyTest {
 

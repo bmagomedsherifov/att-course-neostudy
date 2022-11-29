@@ -1,13 +1,10 @@
-package ru.neoflex.vtb.autotests;
-
 import org.junit.Assert;
-import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.testng.annotations.Test;
 import ru.neoflex.controllers.RequestTestController;
 import ru.neoflex.dao.MySqlConnector;
-import ru.neoflex.model.Price;
 import ru.neoflex.model.RequestSetPrice;
 import ru.neoflex.model.ResponseSetPrice;
 
@@ -16,9 +13,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Iterator;
 
-import static ru.neoflex.vtb.autotests.TestBase.*;
-
-public class ChangePriceTest {
+public class ChangePriceTest extends TestBase{
 
     String changeTestimonyURI = "http://localhost:8080/services/testimony/changePrice";
 
@@ -26,7 +21,7 @@ public class ChangePriceTest {
         String requestFile = "src/test/resources/SetPriceTest.json";
         return validRequestSetPrice(requestFile);
     }
-
+    @Test
     @MethodSource("dataRead")
     @ParameterizedTest
     public void changePriceCheckSuccess(RequestSetPrice requestSetPrice ) {
@@ -47,6 +42,7 @@ public class ChangePriceTest {
         System.out.println("statusCode : " + actualStatusCode);
     }
 
+    @Test
     @MethodSource("dataRead")
     @ParameterizedTest
     public void changePriceCheckBody(RequestSetPrice requestSetPrice) throws SQLException {

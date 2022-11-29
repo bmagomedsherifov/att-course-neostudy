@@ -1,21 +1,18 @@
-package ru.neoflex.vtb.autotests;
-import org.junit.*;
+import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 import ru.neoflex.controllers.RequestTestController;
 import ru.neoflex.dao.MySqlConnector;
-import ru.neoflex.model.CurrentTestimony;
 import ru.neoflex.model.RequestSaveTestimony;
 import ru.neoflex.model.ResponseSaveTestimony;
-import static ru.neoflex.vtb.autotests.TestBase.*;
+
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Iterator;
 
-public class SaveTestimonyTest {
+public class SaveTestimonyTest extends TestBase {
 
     String saveTestimonyURI = "http://localhost:8080/services/testimony/save";
 
